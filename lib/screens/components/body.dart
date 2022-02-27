@@ -6,7 +6,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [],
+      children:  [
+        CategoryList()
+      ],
     );
   }
 }
@@ -21,10 +23,26 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   int selectedCategory = 0;
   List<String> category = ["In Theatre", "Box Office", "Coming Soon"];
-
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      height: 60,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: category.length,
+          itemBuilder: (context, index) => buildCategory(index, context)
+          ),
+    );
+  }
+
+  Text buildCategory(int index, BuildContext context) {
+    return Text(
+      category[index],
+      style: Theme
+          .of(context)
+          .textTheme
+          .headline5?.copyWith(fontWeight: FontWeight.w600),
+    );
   }
 }
 
