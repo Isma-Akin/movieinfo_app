@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieinfo_app/constants.dart';
+import 'package:movieinfo_app/screens/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -24,6 +25,7 @@ class HomeScreen extends StatelessWidget {
             onPressed: () {},
             icon: Icon(Icons.search))],
       ),
+      body: Body(),
     );
   }
 }
